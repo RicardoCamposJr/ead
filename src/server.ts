@@ -1,7 +1,17 @@
 import express from "express";
 import { sequelize } from "./database";
+import { adminJs, adminJsRouter } from "./adminjs";
 
 const app = express();
+
+// Utilizando as rotas do AdminJs:
+// app.use(caminho, rotas)
+app.use(adminJs.options.rootPath, adminJsRouter)
+
+/* Colocando o servidor para olhar para a pasta public
+como estática (imagens, etc..) */
+app.use(express.static('public'))
+
 
 const PORT = process.env.PORT || 3000;
 
