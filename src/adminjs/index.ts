@@ -5,6 +5,7 @@ import AdminJS from "adminjs";
 import AdminJSSequelize from '@adminjs/sequelize'
 import { sequelize } from "../database";
 import AdminJSExpress from '@adminjs/express'
+import { adminJsResources } from "./resources";
 
 // Adaptador do banco de dados que está sendo utilizado:
 AdminJS.registerAdapter(AdminJSSequelize)
@@ -13,6 +14,8 @@ AdminJS.registerAdapter(AdminJSSequelize)
 export const adminJs = new AdminJS({
   databases: [sequelize],
   rootPath: '/admin',
+  // Adicionando o que o adminJs poderá fazer:
+  resources: adminJsResources,
   // Mudando a aparência do AdminJs:
   branding: {
     companyName: 'OneBitFlix',
