@@ -1,0 +1,7 @@
+A linha de desenvolvimento do projeto backend é:
+- Criar uma migration;
+  - Rodar a migration.
+- Criar o model dessa migration para a aplicação;
+  - Incluir esse model em models/index.ts
+- Criar um resource para esse model, para o AdminJs;
+  - Incluir esse resource em resources/index.ts
