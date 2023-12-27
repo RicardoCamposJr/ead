@@ -1,5 +1,7 @@
 import { Category } from '../models'
 
+// São nos services que estão as funções realizadas nos controllers
+
 export const categoryService = {
   findAllPaginated: async (page: number, perPage: number) => {
     const offset = (page - 1) * perPage
@@ -17,5 +19,17 @@ export const categoryService = {
       perPage,
       total: count
     }
+  },
+
+  findByIdWithCourses: async (id: string) => {
+    const categoryWithCourses = await Category.findByPk(id, {
+      attributes: ['id', 'name'],
+      include: {
+        association: 'courses',
+        attributes: ['id', 'name', 'synopsis', ['thumbnail_url', 'thumbnailUrl']],
+      }
+    })
+
+    return categoryWithCourses
   }
 }

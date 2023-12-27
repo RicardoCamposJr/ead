@@ -6,7 +6,7 @@ import { Episode } from "./Episode";
 import { User } from "./User";
 
 // Category-Course:
-Category.hasMany(Course)
+Category.hasMany(Course, { as: 'courses' })
 Course.belongsTo(Category)
 
 // Course-Episode
