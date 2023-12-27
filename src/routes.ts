@@ -1,4 +1,5 @@
 // Arquivo para a definição das rotas
+// Rotas estáticas devem ficar acima das rotas dinamicas:
 
 import express from 'express'
 import { categoriesController } from './controllers/categoriesController'
@@ -13,6 +14,7 @@ router.get('/categories', categoriesController.index)
 router.get('/categories/:id', categoriesController.show)
 
 // Rotas Courses:
+router.get('/courses/featured', coursesController.featured)
 router.get('/courses/:id', coursesController.show)
 
 export { router }
