@@ -8,6 +8,7 @@ import AdminJSExpress from '@adminjs/express'
 import { adminJsResources } from "./resources";
 import { User } from "../models";
 import bcrypt from 'bcrypt'
+import { locale } from "./locale";
 
 // Adaptador do banco de dados que está sendo utilizado:
 AdminJS.registerAdapter(AdminJSSequelize)
@@ -18,6 +19,8 @@ export const adminJs = new AdminJS({
   rootPath: '/admin',
   // Adicionando o que o adminJs poderá fazer:
   resources: adminJsResources,
+  // Adicionando traduções:
+  locale: locale,
   // Mudando a aparência do AdminJs:
   branding: {
     companyName: 'OneBitFlix',
