@@ -9,5 +9,9 @@ export const jwtService = {
     // Como queremos passar o token para o front-end, nós assinamos o token com o método .sign:
     // O parâmetro "secret" é uma senha.
     return jwt.sign(payload, secret, { expiresIn: expiration })
+  },
+
+  verifyToken: (token: string, callbackfn: jwt.VerifyCallback) => {
+    jwt.verify(token, secret, callbackfn)
   }
 }
