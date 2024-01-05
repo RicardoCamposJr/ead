@@ -40,5 +40,6 @@ router.delete('/favorites', ensureAuth, favoritesController.delete)
 
 // Rotas Likes:
 router.post('/likes', ensureAuth, likesController.save)
+router.delete('/likes', ensureAuth, likesController.delete)
 
 export { router }
