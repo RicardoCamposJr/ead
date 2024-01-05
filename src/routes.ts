@@ -13,6 +13,9 @@ const router = express.Router()
 // Rota para cadastro:
 router.post('/auth/register', authController.register)
 
+// Rota para login:
+router.post('/auth/login', authController.login)
+
 /* Criando rota get para categories e atribuindo o método a ser utilizado na requisição.
 Esse método está na pasta controllers. */
 router.get('/categories', categoriesController.index)
