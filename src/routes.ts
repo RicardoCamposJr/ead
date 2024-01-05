@@ -8,6 +8,7 @@ import { episodesController } from './controllers/episodesController'
 import { authController } from './controllers/authController'
 import { ensureAuth, ensureAuthViaQuery } from './middlewares/auth'
 import { favoritesController } from './controllers/favoritesController'
+import { likesController } from './controllers/likesController'
 
 // Instanciando um objeto de Router do Express:
 const router = express.Router()
@@ -36,5 +37,8 @@ router.get('/episodes/stream', ensureAuthViaQuery, episodesController.stream)
 router.post('/favorites', ensureAuth, favoritesController.save)
 router.get('/favorites', ensureAuth, favoritesController.index)
 router.delete('/favorites', ensureAuth, favoritesController.delete)
+
+// Rotas Likes:
+router.post('/likes', ensureAuth, likesController.save)
 
 export { router }
