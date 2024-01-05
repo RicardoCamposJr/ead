@@ -5,6 +5,9 @@ import { router } from "./routes";
 
 const app = express();
 
+// Possibilitando a aplicação a utilizar o JSON nas requisições:
+app.use(express.json()) 
+
 // Utilizando as rotas do AdminJs:
 // app.use(caminho, rotas)
 app.use(adminJs.options.rootPath, adminJsRouter)
