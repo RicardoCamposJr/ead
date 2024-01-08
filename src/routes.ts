@@ -33,6 +33,8 @@ router.get('/courses/:id', ensureAuth, coursesController.show)
 
 // Rotas Episodes:
 router.get('/episodes/stream', ensureAuthViaQuery, episodesController.stream)
+router.get('/episodes/:id/watchTime', ensureAuth, episodesController.getWatchTime)
+router.post('/episodes/:id/watchTime', ensureAuth, episodesController.setWatchTime)
 
 // Rotas Favorites:
 router.post('/favorites', ensureAuth, favoritesController.save)
