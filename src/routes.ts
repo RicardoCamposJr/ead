@@ -47,6 +47,7 @@ router.post('/likes', ensureAuth, likesController.save)
 router.delete('/likes', ensureAuth, likesController.delete)
 
 // Rotas Users:
+router.get('/users/current', ensureAuth, usersController.show)
 router.get('/users/current/watching', ensureAuth, usersController.watching)
 
 export { router }
