@@ -26,7 +26,7 @@ app.use(express.static('public'))
 // Utilizando as rotas da API:
 app.use(router)
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.listen( PORT, () => {
   // Abaixo, estamos testando se a conexão com o bd está funcionando:
